@@ -24,12 +24,17 @@ websocket.onopen = function (event) {
             "verified": false,
             "filter": {
                 "accountKeys": {
-                    "all": ["7m4pawZ2goHu4L1W95Y6xzBzmFz6hCyTdN7Ybxp4dQxR"],
+                    "all": ["sasawZ2goHu4L1W95Y6xzBzmFz6hCyTdN7Ybxp4dQxR"], // Fake address with no activity.
                     "exclude": []
                 }
             }
         }
     }));
+
+    setInterval(() => {
+        websocket.ping();
+        websocket.pong();
+    }, 30000);
 };
 
 websocket.onmessage = function (event) {
@@ -67,3 +72,7 @@ websocket.onerror = function (event) {
 websocket.onclose = function (event) {
     console.log('WebSocket connection closed');
 };
+
+websocket.pong = function () {
+
+}
