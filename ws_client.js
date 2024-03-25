@@ -72,7 +72,3 @@ websocket.onerror = function (event) {
 websocket.onclose = function (event) {
     console.log('WebSocket connection closed');
 };
-
-websocket.pong = function () {
-
-}
